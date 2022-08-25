@@ -10,15 +10,9 @@ final TextTheme appTextTheme = TextTheme(
   headline2: GoogleFonts.robotoMono(fontSize: 20),
   headline3: GoogleFonts.robotoSlab(fontSize: 18, fontWeight: FontWeight.w500),
   headline4: GoogleFonts.robotoSerif(fontSize: 15),
-  headline5: GoogleFonts.notoSans(fontSize: 23, fontWeight: FontWeight.w400),
-  headline6: GoogleFonts.notoSans(
-      fontSize: 19, fontWeight: FontWeight.w500, letterSpacing: 0.15),
-  subtitle1: GoogleFonts.notoSans(
-      fontSize: 15, fontWeight: FontWeight.w400, letterSpacing: 0.15),
-  subtitle2: GoogleFonts.notoSans(
-      fontSize: 13, fontWeight: FontWeight.w500, letterSpacing: 0.1),
-  bodyText1: GoogleFonts.rubikBubbles(
-      fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: 0.5),
+  headline5: GoogleFonts.robotoSlab(fontSize: 30, fontWeight: FontWeight.w500),
+  subtitle1: GoogleFonts.robotoSerif(fontSize: 13, fontWeight: FontWeight.w300),
+  bodyText1: GoogleFonts.robotoFlex(fontSize: 15),
   bodyText2: GoogleFonts.rubikBubbles(
       fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0.25),
   button: GoogleFonts.rubikBubbles(

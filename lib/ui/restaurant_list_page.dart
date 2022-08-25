@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/data/model/restaurant.dart';
+import 'package:restaurant_app/ui/restaurant_detail_page.dart';
 
 class RestaurantListPage extends StatelessWidget {
   const RestaurantListPage({Key? key}) : super(key: key);
@@ -43,15 +44,17 @@ class RestaurantListPage extends StatelessWidget {
         ),
         trailing: Column(
           children: [
-            Icon(Icons.star_border),
-            Text(restaurant.rating.toString(),
-                style: Theme.of(context).textTheme.headline4)
+            const Icon(Icons.star_border),
+            Text(
+              restaurant.rating.toString(),
+              style: Theme.of(context).textTheme.headline4,
+            )
           ],
         ),
-        // onTap: () {
-        //   Navigator.pushNamed(context, RestaurantDetailPage.routeName,
-        //       arguments: restaurant);
-        // },
+        onTap: () {
+          Navigator.pushNamed(context, RestaurantDetailPage.routeName,
+              arguments: restaurant);
+        },
       ),
     );
   }
