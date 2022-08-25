@@ -11,13 +11,17 @@ class RestaurantListPage extends StatelessWidget {
       future: DefaultAssetBundle.of(context)
           .loadString('assets/local_restaurant.json'),
       builder: (context, snapshot) {
-        final List<Restaurant> restaurant = parseRestaurant(snapshot.data);
-        return ListView.builder(
-          itemCount: restaurant.length,
-          itemBuilder: (context, index) {
-            return _buildRestaurantItem(context, restaurant[index]);
-          },
-        );
+        try {
+          final List<Restaurant> restaurant = parseRestaurant(snapshot.data);
+          return ListView.builder(
+            itemCount: restaurant.length,
+            itemBuilder: (context, index) {
+              return _buildRestaurantItem(context, restaurant[index]);
+            },
+          );
+        } catch (e) {
+          return _buildDataNull(context);
+        }
       },
     );
   }
@@ -56,6 +60,21 @@ class RestaurantListPage extends StatelessWidget {
               arguments: restaurant);
         },
       ),
+    );
+  }
+
+  Widget _buildDataNull(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        const Icon(Icons.error_outline, size: 100),
+        Text(
+          'Oops! Error Detected, Please contact related staff for further information',
+          style: Theme.of(context).textTheme.headline2,
+          textAlign: TextAlign.center,
+        ),
+      ],
     );
   }
 }
