@@ -9,10 +9,12 @@ class CustomScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Stack(
+          child: Column(
         children: [
-          body,
           _buildCustomAppBar(context),
+          Expanded(
+            child: body,
+          ),
         ],
       )),
     );
@@ -27,7 +29,7 @@ Card _buildCustomAppBar(BuildContext context) {
         bottomLeft: Radius.circular(8.0),
       ),
     ),
-    color: Colors.orange.shade200,
+    color: Colors.orangeAccent.shade200,
     margin: const EdgeInsets.all(0),
     child: Padding(
       padding: const EdgeInsets.symmetric(

@@ -8,12 +8,8 @@ final TextTheme appTextTheme = TextTheme(
   headline1: GoogleFonts.roboto(
       fontSize: 30, fontWeight: FontWeight.w700, color: Colors.white),
   headline2: GoogleFonts.robotoMono(fontSize: 20),
-  headline3: GoogleFonts.robotoMono(fontSize: 20),
-  headline4: GoogleFonts.notoSans(
-    fontSize: 32,
-    fontWeight: FontWeight.w400,
-    letterSpacing: 0.25,
-  ),
+  headline3: GoogleFonts.robotoSlab(fontSize: 18, fontWeight: FontWeight.w500),
+  headline4: GoogleFonts.robotoSerif(fontSize: 15),
   headline5: GoogleFonts.notoSans(fontSize: 23, fontWeight: FontWeight.w400),
   headline6: GoogleFonts.notoSans(
       fontSize: 19, fontWeight: FontWeight.w500, letterSpacing: 0.15),

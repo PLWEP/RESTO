@@ -35,8 +35,19 @@ class RestaurantListPage extends StatelessWidget {
         ),
         title: Text(
           restaurant.name,
+          style: Theme.of(context).textTheme.headline3,
         ),
-        subtitle: Text(restaurant.city),
+        subtitle: Text(
+          restaurant.city,
+          style: Theme.of(context).textTheme.headline4,
+        ),
+        trailing: Column(
+          children: [
+            Icon(Icons.star_border),
+            Text(restaurant.rating.toString(),
+                style: Theme.of(context).textTheme.headline4)
+          ],
+        ),
         // onTap: () {
         //   Navigator.pushNamed(context, RestaurantDetailPage.routeName,
         //       arguments: restaurant);
