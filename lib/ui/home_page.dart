@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/ui/restaurant_list_page.dart';
+import 'package:restaurant_app/widgets/custom_scaffold.dart';
 
 class HomePage extends StatelessWidget {
   static const routeName = '/home_page';
@@ -6,13 +8,6 @@ class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("GeeksForGeeks")),
-      body: const Center(
-          child: Text(
-        "Home page",
-        textScaleFactor: 2,
-      )),
-    );
+    return const CustomScaffold(body: RestaurantListPage());
   }
 }

@@ -5,11 +5,10 @@ const Color primaryColor = Color(0x00ff9551);
 const Color secondaryColor = Color(0x006fedd6);
 
 final TextTheme appTextTheme = TextTheme(
-  headline1: GoogleFonts.notoSans(
-      fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
-  headline2: GoogleFonts.notoSans(
-      fontSize: 57, fontWeight: FontWeight.w300, letterSpacing: -0.5),
-  headline3: GoogleFonts.notoSans(fontSize: 46, fontWeight: FontWeight.w400),
+  headline1: GoogleFonts.roboto(
+      fontSize: 30, fontWeight: FontWeight.w700, color: Colors.white),
+  headline2: GoogleFonts.robotoMono(fontSize: 20),
+  headline3: GoogleFonts.robotoMono(fontSize: 20),
   headline4: GoogleFonts.notoSans(
     fontSize: 32,
     fontWeight: FontWeight.w400,
