@@ -25,8 +25,8 @@ Card _buildCustomAppBar(BuildContext context) {
   return Card(
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.only(
-        bottomRight: Radius.circular(8.0),
-        bottomLeft: Radius.circular(8.0),
+        bottomRight: Radius.circular(16.0),
+        bottomLeft: Radius.circular(16.0),
       ),
     ),
     color: Colors.orangeAccent.shade200,

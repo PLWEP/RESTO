@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: Theme.of(context).colorScheme.copyWith(
-              primary: primaryColor,
-              secondary: secondaryColor,
+              primary: Colors.orangeAccent.shade200,
+              secondary: Colors.blueAccent.shade200,
               onPrimary: Colors.black,
             ),
         textTheme: appTextTheme,
