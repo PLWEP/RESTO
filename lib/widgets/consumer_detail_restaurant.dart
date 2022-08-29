@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:restaurant_app/provider/detail_restaurant_provider.dart';
+import 'package:restaurant_app/ui/error_page.dart';
 import 'package:restaurant_app/widgets/detail_restaurant_view.dart';
 
 class ConsumerDetailRestaurant extends StatelessWidget {
@@ -14,11 +15,16 @@ class ConsumerDetailRestaurant extends StatelessWidget {
       } else if (state.state == ResultState.hasData) {
         var restaurant = state.result.restaurant;
         return DetailRestaurantView(restaurant: restaurant);
-      } else if (state.state == ResultState.noData) {
-        return Center(
-          child: Material(
-            child: Text(state.message),
-          ),
+      } else if (state.state == ResultState.error ||
+          state.state == ResultState.noData) {
+        if (state.message.contains('Failed host lookup')) {
+          return const ErrorPage(
+            errormessage: 'Tidak dapat tersambung dengan internet',
+          );
+        }
+
+        return const ErrorPage(
+          errormessage: 'Terjadi kesalahan silahkan coba lagi ',
         );
       } else {
         return const Material(child: Text(''));

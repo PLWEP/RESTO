@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ErrorPage extends StatelessWidget {
-  const ErrorPage({Key? key}) : super(key: key);
+  final String errormessage;
+
+  const ErrorPage({Key? key, required this.errormessage}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class ErrorPage extends StatelessWidget {
       children: [
         const Icon(Icons.error_outline, size: 100),
         Text(
-          'Oops! Error Detected, Please contact related staff for further information',
+          errormessage,
           style: Theme.of(context).textTheme.headline2,
           textAlign: TextAlign.center,
         ),

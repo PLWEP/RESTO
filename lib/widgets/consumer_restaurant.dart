@@ -21,13 +21,16 @@ class ConsumerRestaurant extends StatelessWidget {
               return RestaurantListTile(restaurant: restaurant);
             },
           );
-        } else if (state.state == ResultState.error) {
-          return const ErrorPage();
-        } else if (state.state == ResultState.noData) {
-          return Center(
-            child: Material(
-              child: Text(state.message),
-            ),
+        } else if (state.state == ResultState.error ||
+            state.state == ResultState.noData) {
+          if (state.message.contains('Failed host lookup')) {
+            return const ErrorPage(
+              errormessage: 'Tidak dapat tersambung dengan internet',
+            );
+          }
+
+          return const ErrorPage(
+            errormessage: 'Terjadi kesalah silahkan coba lagi',
           );
         } else {
           return const Material(child: Text(''));
