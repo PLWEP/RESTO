@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ListDetailItem extends StatelessWidget {
-  const ListDetailItem({
+class CustomHorizontalList extends StatelessWidget {
+  const CustomHorizontalList({
     Key? key,
     required this.item,
   }) : super(key: key);

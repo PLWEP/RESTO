@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/data/model/detail_restaurant.dart';
-import 'package:restaurant_app/widgets/list_detail_item.dart';
-import 'package:restaurant_app/widgets/list_detail_review.dart';
+import 'package:restaurant_app/widgets/custom_horizontal_list.dart';
+import 'package:restaurant_app/widgets/review_list_tile.dart';
 
-class DetailItem extends StatelessWidget {
+class DetailRestaurantView extends StatelessWidget {
   final DetailRestaurant restaurant;
 
-  const DetailItem({Key? key, required this.restaurant}) : super(key: key);
+  const DetailRestaurantView({Key? key, required this.restaurant})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +58,7 @@ class DetailItem extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 5),
-                  ListDetailItem(item: restaurant.categories),
+                  CustomHorizontalList(item: restaurant.categories),
                   const SizedBox(height: 20),
                   Text('About', style: Theme.of(context).textTheme.headline3),
                   const Divider(color: Colors.grey),
@@ -72,11 +73,11 @@ class DetailItem extends StatelessWidget {
                     textAlign: TextAlign.justify,
                   ),
                   const Divider(color: Colors.grey),
-                  ListDetailItem(item: restaurant.menus.drinks),
+                  CustomHorizontalList(item: restaurant.menus.drinks),
                   const SizedBox(
                     height: 5,
                   ),
-                  ListDetailItem(item: restaurant.menus.foods),
+                  CustomHorizontalList(item: restaurant.menus.foods),
                   const SizedBox(height: 20),
                   Text(
                     'Review',
@@ -84,13 +85,16 @@ class DetailItem extends StatelessWidget {
                     textAlign: TextAlign.justify,
                   ),
                   const Divider(color: Colors.grey),
-                  ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: restaurant.customerReviews.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      var review = restaurant.customerReviews[index];
-                      return ListDetailReview(review: review);
-                    },
+                  SizedBox(
+                    height: 200,
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: restaurant.customerReviews.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        var review = restaurant.customerReviews[index];
+                        return ReviewListTile(review: review);
+                      },
+                    ),
                   ),
                 ],
               ),

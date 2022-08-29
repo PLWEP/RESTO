@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/data/model/restaurant.dart';
-import 'package:restaurant_app/ui/restaurant_detail_page.dart';
+import 'package:restaurant_app/ui/detail_page.dart';
 
-class ListItem extends StatelessWidget {
+class RestaurantListTile extends StatelessWidget {
   final Restaurant restaurant;
 
-  const ListItem({Key? key, required this.restaurant}) : super(key: key);
+  const RestaurantListTile({Key? key, required this.restaurant})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class ListItem extends StatelessWidget {
           ],
         ),
         onTap: () {
-          Navigator.pushNamed(context, RestaurantDetailPage.routeName,
+          Navigator.pushNamed(context, DetailPage.routeName,
               arguments: restaurant.id);
         },
       ),
