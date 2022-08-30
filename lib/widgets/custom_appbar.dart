@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/ui/search_page.dart';
 
 class CustomAppbar extends StatelessWidget {
   final Widget body;
@@ -40,10 +41,17 @@ Card _buildCustomAppBar(BuildContext context) {
         mainAxisSize: MainAxisSize.min,
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 "RESTO",
                 style: Theme.of(context).textTheme.headline1,
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, SearchPage.routeName);
+                },
+                icon: const Icon(Icons.search),
               ),
             ],
           ),

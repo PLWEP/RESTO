@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_app/provider/restaurant_provider.dart';
+import 'package:restaurant_app/provider/search_restaurant_provider.dart';
 import 'package:restaurant_app/widgets/error_indicator.dart';
 import 'package:restaurant_app/widgets/null_indicator.dart';
 import 'package:restaurant_app/widgets/restaurant_list_tile.dart';
 
-class ConsumerRestaurant extends StatelessWidget {
-  const ConsumerRestaurant({Key? key}) : super(key: key);
+class ConsumerSearchRestaurant extends StatelessWidget {
+  const ConsumerSearchRestaurant({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<RestaurantProvider>(
+    return Consumer<SearchRestaurantProvider>(
       builder: (context, state, _) {
         if (state.state == ResultState.loading) {
           return const Center(child: CircularProgressIndicator());
@@ -31,7 +31,7 @@ class ConsumerRestaurant extends StatelessWidget {
           }
 
           return const NullIndicator(
-            nullmessage: 'Data Kosong',
+            nullmessage: 'Data tidak ditemukan\nCoba kata kunci lain',
           );
         } else {
           return const Material(child: Text(''));

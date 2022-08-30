@@ -5,7 +5,7 @@ import 'package:restaurant_app/provider/detail_restaurant_provider.dart';
 import 'package:restaurant_app/widgets/consumer_detail_restaurant.dart';
 
 class DetailPage extends StatelessWidget {
-  static const routeName = '/restaurant_detail';
+  static const routeName = '/detail_page';
   final String id;
 
   const DetailPage({Key? key, required this.id}) : super(key: key);
