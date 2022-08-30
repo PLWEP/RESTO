@@ -75,12 +75,15 @@ class _SearchAppBarState extends State<SearchAppBar> {
                     cursorColor: Colors.black,
                     controller: _controller,
                     decoration: const InputDecoration(
-                      suffixIcon: Icon(Icons.search),
                       hintText: 'Search',
-                      border: OutlineInputBorder(
-                        gapPadding: 5,
+                      focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(
-                          Radius.circular(4.0),
+                          Radius.circular(10.0),
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10.0),
                         ),
                       ),
                     ),

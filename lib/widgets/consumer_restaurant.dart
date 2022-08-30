@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:restaurant_app/provider/restaurant_provider.dart';
 import 'package:restaurant_app/widgets/error_indicator.dart';
-import 'package:restaurant_app/widgets/null_indicator.dart';
 import 'package:restaurant_app/widgets/restaurant_list_tile.dart';
 
 class ConsumerRestaurant extends StatelessWidget {
@@ -30,8 +29,8 @@ class ConsumerRestaurant extends StatelessWidget {
             );
           }
 
-          return const NullIndicator(
-            nullmessage: 'Data Kosong',
+          return const ErrorIndicator(
+            errormessage: 'Data tidak ditemukan',
           );
         } else {
           return const Material(child: Text(''));

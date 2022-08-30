@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/data/model/detail_restaurant.dart';
+import 'package:restaurant_app/ui/review_page.dart';
 import 'package:restaurant_app/widgets/custom_horizontal_list.dart';
 import 'package:restaurant_app/widgets/review_list_tile.dart';
 
@@ -79,10 +80,26 @@ class DetailRestaurantView extends StatelessWidget {
                   ),
                   CustomHorizontalList(item: restaurant.menus.foods),
                   const SizedBox(height: 20),
-                  Text(
-                    'Review',
-                    style: Theme.of(context).textTheme.headline3,
-                    textAlign: TextAlign.justify,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Review',
+                        style: Theme.of(context).textTheme.headline3,
+                        textAlign: TextAlign.justify,
+                      ),
+                      IconButton(
+                        splashRadius: 18,
+                        onPressed: () {
+                          Navigator.pushNamed(context, ReviewPage.routeName,
+                              arguments: restaurant.id);
+                        },
+                        icon: const Icon(
+                          Icons.add,
+                          size: 18,
+                        ),
+                      ),
+                    ],
                   ),
                   const Divider(color: Colors.grey),
                   SizedBox(

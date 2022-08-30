@@ -24,7 +24,7 @@ class ConsumerDetailRestaurant extends StatelessWidget {
         }
 
         return const ErrorIndicator(
-          errormessage: 'Terjadi kesalahan silahkan coba lagi ',
+          errormessage: 'Data tidak ditemukan',
         );
       } else {
         return const Material(child: Text(''));
