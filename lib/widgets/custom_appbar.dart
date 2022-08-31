@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/ui/saved_page.dart';
 import 'package:restaurant_app/ui/search_page.dart';
 import 'package:restaurant_app/ui/setting_page.dart';
 
@@ -52,15 +53,21 @@ Card _buildCustomAppBar(BuildContext context) {
                 children: [
                   IconButton(
                     onPressed: () {
+                      Navigator.pushNamed(context, SearchPage.routeName);
+                    },
+                    icon: const Icon(Icons.search),
+                  ),
+                  IconButton(
+                    onPressed: () {
                       Navigator.pushNamed(context, SettingPage.routeName);
                     },
                     icon: const Icon(Icons.settings),
                   ),
                   IconButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, SearchPage.routeName);
+                      Navigator.pushNamed(context, SavedPage.routeName);
                     },
-                    icon: const Icon(Icons.search),
+                    icon: const Icon(Icons.save),
                   ),
                 ],
               ),

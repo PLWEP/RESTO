@@ -6,6 +6,7 @@ import 'package:restaurant_app/common/style.dart';
 import 'package:restaurant_app/ui/detail_page.dart';
 import 'package:restaurant_app/ui/home_page.dart';
 import 'package:restaurant_app/ui/review_page.dart';
+import 'package:restaurant_app/ui/saved_page.dart';
 import 'package:restaurant_app/ui/search_page.dart';
 import 'package:restaurant_app/ui/setting_page.dart';
 import 'package:restaurant_app/ui/splash_screen_page.dart';
@@ -55,6 +56,7 @@ class MyApp extends StatelessWidget {
         ReviewPage.routeName: (context) => ReviewPage(
             id: ModalRoute.of(context)?.settings.arguments as String),
         SettingPage.routeName: (context) => const SettingPage(),
+        SavedPage.routeName: (context) => const SavedPage(),
       },
     );
   }

@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:restaurant_app/data/db/database_helper.dart';
 import 'package:restaurant_app/provider/database_provider.dart';
-import 'package:restaurant_app/provider/restaurant_provider.dart';
 import 'package:restaurant_app/utils/result_state.dart';
 import 'package:restaurant_app/widgets/error_indicator.dart';
+import 'package:restaurant_app/widgets/null_indicator.dart';
 import 'package:restaurant_app/widgets/restaurant_list_tile.dart';
 
-class ConsumerRestaurant extends StatelessWidget {
-  const ConsumerRestaurant({Key? key}) : super(key: key);
+class ConsumerSaved extends StatelessWidget {
+  const ConsumerSaved({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<RestaurantProvider>(
-      builder: (context, state, _) {
+    return Consumer<DatabaseProvider>(
+      builder: (context, state, child) {
         if (state.state == ResultState.loading) {
           return const Center(child: CircularProgressIndicator());
         } else if (state.state == ResultState.hasData) {
           return ListView.builder(
-            itemCount: state.result.restaurants.length,
+            itemCount: state.saved.length,
             itemBuilder: (context, index) {
-              var restaurant = state.result.restaurants[index];
+              var restaurant = state.saved[index];
               return RestaurantListTile(restaurant: restaurant);
             },
           );
@@ -32,8 +31,8 @@ class ConsumerRestaurant extends StatelessWidget {
             );
           }
 
-          return const ErrorIndicator(
-            errormessage: 'Data tidak ditemukan',
+          return const NullIndicator(
+            nullmessage: 'Tidak terdapat data yang disimpan',
           );
         } else {
           return const Material(child: Text(''));

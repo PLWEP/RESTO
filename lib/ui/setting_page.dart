@@ -4,7 +4,6 @@ import 'package:restaurant_app/data/preferences/preferences_helper.dart';
 import 'package:restaurant_app/provider/preferences_provider.dart';
 import 'package:restaurant_app/provider/scheduling_provider.dart';
 import 'package:restaurant_app/ui/detail_page.dart';
-import 'package:restaurant_app/utils/background_service.dart';
 import 'package:restaurant_app/utils/notification_helper.dart';
 import 'package:restaurant_app/widgets/setting_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
