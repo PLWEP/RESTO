@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/ui/search_page.dart';
+import 'package:restaurant_app/ui/setting_page.dart';
 
 class CustomAppbar extends StatelessWidget {
   final Widget body;
@@ -47,11 +48,21 @@ Card _buildCustomAppBar(BuildContext context) {
                 "RESTO",
                 style: Theme.of(context).textTheme.headline1,
               ),
-              IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, SearchPage.routeName);
-                },
-                icon: const Icon(Icons.search),
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, SettingPage.routeName);
+                    },
+                    icon: const Icon(Icons.settings),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, SearchPage.routeName);
+                    },
+                    icon: const Icon(Icons.search),
+                  ),
+                ],
               ),
             ],
           ),

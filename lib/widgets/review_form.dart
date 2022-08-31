@@ -18,6 +18,9 @@ class _ReviewFormState extends State<ReviewForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Submit Review"),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: SafeArea(
