@@ -8,17 +8,19 @@ class ErrorIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const Icon(Icons.error_outline, size: 75),
-        Text(
-          errormessage,
-          style: Theme.of(context).textTheme.headline2,
-          textAlign: TextAlign.center,
-        ),
-      ],
+    return Material(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const Icon(Icons.error_outline, size: 75),
+          Text(
+            errormessage,
+            style: Theme.of(context).textTheme.headline2,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }

@@ -7,17 +7,19 @@ class NullIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const Icon(Icons.search_off, size: 75),
-        Text(
-          nullmessage,
-          style: Theme.of(context).textTheme.headline2,
-          textAlign: TextAlign.center,
-        ),
-      ],
+    return Material(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const Icon(Icons.search_off, size: 75),
+          Text(
+            nullmessage,
+            style: Theme.of(context).textTheme.headline2,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }
